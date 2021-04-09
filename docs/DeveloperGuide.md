@@ -347,21 +347,21 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 1.  User requests to list groups
 2.  AddressBook shows a list of groups
 3.  User requests to delete a specific group in the list
-4.  AddressBook deletes the group
+4.  AddressBook deletes the group using the index
 
     Use case ends.
 
 **Extensions**
 
-* 2a. The list is empty.
+* 2a. The index does not exist.
 
-  Use case ends.
+  AddressBook (NS Edition) Shows an error message. Use case ends.
 
-* 3a. The given index is invalid.
+* 3a. There are persons assigned in the group.
 
-    * 3a1. AddressBook shows an error message.
+    * 3a1. AddressBook (NS edition) re-assigns all persons to the N/A group
 
-      Use case resumes at step 2.
+      Use case resumes to delete the group.
 
 **Use case: Delete all person from group**
 
